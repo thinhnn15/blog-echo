@@ -13,8 +13,10 @@ CREATE TABLE "tags" (
 );
 
 CREATE TABLE "post_tag" (
-                            "post_id" bigserial PRIMARY KEY,
-                            "tag_id" bigserial
+                            "id" bigserial,
+                            "post_id" bigserial,
+                            "tag_id" bigserial,
+                            PRIMARY KEY ("id", "post_id")
 );
 
 ALTER TABLE "post_tag" ADD FOREIGN KEY ("post_id") REFERENCES "posts" ("id");
